@@ -19,15 +19,15 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/tasks', [TaskController::class, 'index'])->middleware('auth');
 
-Route::get('/tasks/create', [TaskController::class, 'create'])->middleware('is_admin');
+Route::get('/tasks/create', [TaskController::class, 'create']);
 
 Route::get('/tasks/{id}', [TaskController::class, 'show']);
 
-Route::post('/tasks', [TaskController::class, 'store'])->middleware('is_admin');
+Route::post('/tasks', [TaskController::class, 'store']);
 
-route::get('/tasks/{id}/edit', [TaskController::class, 'edit'])->middleware('is_admin');
+route::get('/tasks/{id}/edit', [TaskController::class, 'edit']);
 
-Route::patch('/tasks/{id}', [TaskController::class, 'update'])->middleware('is_admin');
+Route::patch('/tasks/{id}', [TaskController::class, 'update']);
 
-Route::delete('/tasks/{id}', [TaskController::class, 'delete'])->middleware('is_admin');
+Route::delete('/tasks/{id}', [TaskController::class, 'delete']);
 
