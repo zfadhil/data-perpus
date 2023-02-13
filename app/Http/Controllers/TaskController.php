@@ -21,7 +21,7 @@ class TaskController extends Controller
             $task = Task::where('task', 'LIKE', 
             "%$request->search%")->get();
         }
-        $task = Task::paginate(3);
+        $task = Task::paginate(5);
         return view('task.index' ,[
         'data' => $task
     ]);

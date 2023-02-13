@@ -15,7 +15,7 @@
             <form action="{{ url('/tasks') }}" method="POST">
                  @csrf
                 <div class="mb-3">
-                    <label for="" class="form-label">User</label>
+                    <label for="" class="form-label">Judul</label>
                     <input type="text" class="form-control" name="user" value="{{old('user')}}">
                         @error('user')
                         <span class="text-danger">
@@ -24,7 +24,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">Task</label>
+                    <label for="" class="form-label">Deskripsi</label>
                     <textarea class="form-control" id="" rows="3" name="task" {{old('user')}}></textarea>
                     @error('task')
                     <span class="text-danger">
