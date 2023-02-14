@@ -19,7 +19,7 @@ class IsAdmin
     {
         $user = Auth::user();
         if (!$user->role || $user->role !== 'admin'){
-            return redirect('/tamu');
+            return redirect('/library');
         }else
         return $next($request);
 
