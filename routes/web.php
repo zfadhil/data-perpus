@@ -14,20 +14,23 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function(){
+    return view('welcome');
+});
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/library', [HomeController::class, 'index']);
 
-Route::get('/tasks', [TaskController::class, 'index'])->middleware('auth');
+Route::get('/admin', [TaskController::class, 'index'])->middleware('auth');
 
-Route::get('/tasks/create', [TaskController::class, 'create']);
+Route::get('/admin/create', [TaskController::class, 'create']);
 
-Route::get('/tasks/{id}', [TaskController::class, 'show']);
+Route::get('/admin/{id}', [TaskController::class, 'show']);
 
-Route::post('/tasks', [TaskController::class, 'store']);
+Route::post('/admin', [TaskController::class, 'store']);
 
-route::get('/tasks/{id}/edit', [TaskController::class, 'edit']);
+route::get('/admin/{id}/edit', [TaskController::class, 'edit']);
 
-Route::patch('/tasks/{id}', [TaskController::class, 'update']);
+Route::patch('/admin/{id}', [TaskController::class, 'update']);
 
-Route::delete('/tasks/{id}', [TaskController::class, 'delete']);
+Route::delete('/admin/{id}', [TaskController::class, 'delete']);
 

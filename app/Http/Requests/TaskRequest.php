@@ -38,7 +38,7 @@ class TaskRequest extends FormRequest
     public function messages()
     {
         return[
-            'required' => 'islam :attribute harus diisi', 
+            'required' => 'pesan :attribute harus diisi', 
             'user.required' => 'nama pengguna harus diisi'
         ];
     }

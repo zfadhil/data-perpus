@@ -9,19 +9,19 @@ use App\Models\Task;
 
 class HomeController extends Controller
 {
+    public function __construct()
+    {
+        $this -> middleware('auth');
+    }
+
     public function index(Request $request) {
         if ($request->search) {
             $task = Task::where('task', 'LIKE', 
             "%$request->search%")->get();
         }
         $task = Task::paginate(5);
-        return view('welcome' ,[
+        return view('task.tamu' ,[
         'data' => $task
     ]);
-    }
-
-    public function show($id) {
-        $task = Task::find($id);
-        return $task;
     }
 }
