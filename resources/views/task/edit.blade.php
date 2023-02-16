@@ -19,14 +19,14 @@
                 <div class="mb-3">
                     <input type="text" class="input input-bordered w-full max-w-md" placeholder="Judul" name="user" value="{{$task->user}}">
                     @error('user')
-                    <span class="text-danger">
+                    <span class="text-error">
                         {{$message}}
                     </span>
                     @enderror
                     <input type="text" class="input input-bordered w-full max-w-md mt-2" placeholder="Status buku" name="statuss"
                         value="{{ old('task', $task->statuss) }}">
                     @error('statuss')
-                    <span class="text-danger">
+                    <span class="text-error">
                         {{$message}}
                     </span>
                     @enderror
@@ -35,7 +35,7 @@
                     <textarea class="input input-bordered h-full w-full max-w-md" placeholder="Deskripsi" id="" rows="3"
                         name="task">{{$task->task}}</textarea>
                     @error('task')
-                    <span class="text-danger">
+                    <span class="text-error">
                         {{$message}}
                     </span>
                     @enderror

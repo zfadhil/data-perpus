@@ -6,10 +6,9 @@
         <a href="{{ url('/admin/create') }}" class="btn btn-sm btn-primary">tambah</a>
     </div>
 </div>
-<div class="mt-2">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         @foreach ($data as $item)
-        <div class="card w-96 bg-base-100 shadow-xl mx-auto">
+        <div class="card mt-2 w-96 bg-base-100 shadow-xl mx-auto">
             <div class="card-body">
                 <span class="badge">{{$item->statuss}}</span>
                 <h2 class="card-title">{{$item->user}}</h2>
@@ -27,5 +26,4 @@
         </div>
         @endforeach
     </div>
-</div>
 @endsection

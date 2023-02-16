@@ -18,7 +18,7 @@
     </style>
 </head>
 
-<body class="max-w-screen">
+<body>
 
     @include('components.navbar')
     @yield('main')
