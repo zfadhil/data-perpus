@@ -19,7 +19,7 @@ class HomeController extends Controller
             $task = Task::where('task', 'LIKE', 
             "%$request->search%")->get();
         }
-        $task = Task::paginate(5);
+        $task = Task::all();
         return view('task.tamu' ,[
         'data' => $task
     ]);

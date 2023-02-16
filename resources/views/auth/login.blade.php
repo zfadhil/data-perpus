@@ -5,37 +5,42 @@
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+            <li>{{ $error }}</li>
             @endforeach
         </ul>
     </div>
-@endif
+    @endif
+
     <div class="card">
         <div class="card-body">
             <form action="{{ route('login') }}" method="POST">
-                 @csrf
+                @csrf
                 <div class="mb-3">
-                    <label for="" class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email" value="{{old('email')}}">
-                        @error('email')
-                        <span class="text-danger">
-                            {{$message}}
-                        </span>
+                    <label for="" class="label">Email</label>
+                    <input type="email" class="input input-bordered w-full max-w-xs" placeholder="example@example.com"
+                        name="email" value="{{old('email')}}">
+                    @error('email')
+                    <span class="text-danger">
+                        {{$message}}
+                    </span>
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="password" value="{{old('password')}}">
-                        @error('password')
-                        <span class="text-danger">
-                            {{$message}}
-                        </span>
+                    <label for="" class="label">Password</label>
+                    <input type="password" class="input input-bordered w-full max-w-xs" placeholder="password"
+                        name="password" value="{{old('password')}}">
+                    @error('password')
+                    <span class="text-danger">
+                        {{$message}}
+                    </span>
                     @enderror
                 </div>
-                
-                <a href="{{ route('password.request') }}" class="btn btn-link">Forget Password</a>
-                <button type="submit" class="btn btn-primary">Submit</button>           
-             </form>
+
+                <div class="card-actions">
+                    <a href="{{ route('password.request') }}" class="btn btn-link">Forget Password</a>
+                    <button type="submit" class="btn btn-primary">login</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

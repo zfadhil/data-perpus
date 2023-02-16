@@ -3,31 +3,29 @@
 <div class="border rounded mt-5 mx-auto d-flex flex-column align-items-stretch bg-white" style="width: 380px;">
     <div class="d-flex justify-content-between flex-shrink-0 p-3 link-dark  border-bottom">
         <span class="fs-5 fw-semibold">List Buku</span>
-        <a href="{{ url('/tasks/create') }}" class="btn btn-sm btn-primary">tambah</a>
+        <a href="{{ url('/admin/create') }}" class="btn btn-sm btn-primary">tambah</a>
     </div>
-
-    @foreach ($data as $item)
-    <div class="list-group list-group-flush border-bottom scrollarea">
-        <div class="list-group-item list-group-item-action py-3 lh-tight" aria-current="true">
-            <div class="d-flex w-100 align-items-center justify-content-between">
-                <strong class="mb-1">{{$item->user}}</strong>
+</div>
+<div class="mt-2">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        @foreach ($data as $item)
+        <div class="card w-96 bg-base-100 shadow-xl mx-auto">
+            <div class="card-body">
+                <span class="badge">{{$item->statuss}}</span>
+                <h2 class="card-title">{{$item->user}}</h2>
+                <p>{{$item->task}}</p>
+                <div class="card-action justify-end">
+                    <form action="{{url("/admin/$item->id")}}" method="POST">
+                        @csrf
+                        @method("DELETE")
+                        <a href="{{url("/admin/$item->id/edit")}}" class="btn btn-warning">edit</a>
+                        <button type="submit" class="btn btn-error">delete</button>
+                    </form>
+                </div>
             </div>
-            <div class="col-10 mb-1 small">{{$item->task}}</div>
-            <div class="group-action">
-                <form action="{{url("/tasks/$item->id")}}" method="POST">
-                    @csrf
-                    @method("DELETE")
-                    <a href="{{url("/tasks/$item->id/edit")}}" class="badge bg-info text-white">edit</a>
-                    <button type="submit" class="badge bg-danger text-white">delete</button>
-                </form>
-            </div>
-            </form>
 
         </div>
+        @endforeach
     </div>
-    @endforeach
-
-    <br>
-    {{ $data->links('pagination::bootstrap-4') }}
 </div>
 @endsection

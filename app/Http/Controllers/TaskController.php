@@ -12,7 +12,6 @@ class TaskController extends Controller
     public function __construct()
     {
         $this -> middleware('auth');
-        $this -> middleware('is_admin');
     }
 
     
@@ -21,7 +20,7 @@ class TaskController extends Controller
             $task = Task::where('task', 'LIKE', 
             "%$request->search%")->get();
         }
-        $task = Task::paginate(5);
+        $task = Task::all();
         return view('task.index' ,[
         'data' => $task
     ]);
@@ -39,18 +38,20 @@ class TaskController extends Controller
         // return $this->taskList;
         Task::create([
             'task' => $request->task,
-            'user' => $request->user
+            'user' => $request->user,
+            'statuss' => $request->statuss
         ]);
-        return redirect('/tasks');
+        return redirect('/admin');
     }
 
     public function update(TaskRequest $request,$id){
         $task = Task::find($id);
         $task->update([
             'task' => $request->task,
-            'user' => $request->user
+            'user' => $request->user,
+            'statuss' => $request->statuss
         ]);
-        return redirect('/tasks');
+        return redirect('/admin');
     }
 
     public function edit($id){
@@ -60,7 +61,7 @@ class TaskController extends Controller
 
     public function delete($id){
         $tasK = Task::find($id)->delete();
-        return redirect('/tasks');
+        return redirect('/admin');
     }
 
     public function create(){

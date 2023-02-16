@@ -5,33 +5,40 @@
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+            <li>{{ $error }}</li>
             @endforeach
         </ul>
     </div>
-@endif
-    <div class="card">
+    @endif
+    <div class="card w-max bg-base-100 shadow-xl">
         <div class="card-body">
-            <form action="{{ url("/tasks/$task->id") }}" method="POST">
+            <h2 class="card-title">Edit list Buku</h2>
+            <form action="{{ url("/admin/$task->id") }}" method="POST">
                 @csrf
                 @method('PATCH')
                 <div class="mb-3">
-                    <label for="" class="form-label">User</label>
-                    <input type="text" class="form-control" name="user" value="{{$task->user}}">
+                    <input type="text" class="input input-bordered w-full max-w-md" placeholder="Judul" name="user" value="{{$task->user}}">
                     @error('user')
                     <span class="text-danger">
                         {{$message}}
                     </span>
-                @enderror
+                    @enderror
+                    <input type="text" class="input input-bordered w-full max-w-md mt-2" placeholder="Status buku" name="statuss"
+                        value="{{ old('task', $task->statuss) }}">
+                    @error('statuss')
+                    <span class="text-danger">
+                        {{$message}}
+                    </span>
+                    @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">Task</label>
-                    <textarea class="form-control" id="" rows="3" name="task">{{$task->task}}</textarea>
+                    <textarea class="input input-bordered h-full w-full max-w-md" placeholder="Deskripsi" id="" rows="3"
+                        name="task">{{$task->task}}</textarea>
                     @error('task')
                     <span class="text-danger">
                         {{$message}}
                     </span>
-                @enderror
+                    @enderror
                 </div>
                 <button type="submit" class="btn btn-primary">edit</button>
             </form>
