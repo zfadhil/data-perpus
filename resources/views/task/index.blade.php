@@ -2,15 +2,16 @@
 @section('main')
 <div class="border rounded mt-5 mx-auto" style="width: 380px;">
     <div class="w-96 justify-content-between flex-shrink-0 p-3 link-dark  border-bottom">
-        <div class="inline">
-            <span class="fs-5 fw-semibold">List Buku</span>
-            <a href="{{ url('/admin/create') }}" class="btn btn-sm btn-primary">tambah</a>
-        </div>
-        <div class="hidden md:block">
+        <a href="{{ url('/admin/create') }}" class="btn btn-sm btn-primary">tambah</a>
+        <span class="fs-5 fw-bold">List Buku</span>
+        <div class="md:hidden mt-2 mx-auto">
             {{ $data->links('pagination::tailwind') }}
         </div>
     </div>
 </div>
+
+<div class="hidden md:block mx-10 mt-0 md:mt-2">{{ $data->links('pagination::tailwind') }}</div>
+
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     @foreach ($data as $item)
     <div class="card mt-2 w-96 bg-base-100 shadow-xl mx-auto">
@@ -30,6 +31,5 @@
 
     </div>
     @endforeach
-    <div class="md:hidden">{{ $data->links('pagination::tailwind') }}</div>
 </div>
 @endsection

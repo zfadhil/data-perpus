@@ -8,8 +8,9 @@
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="md:hidden mx-auto mt-2">{{ $data->links('pagination::tailwind') }}</div>
     @foreach ($data as $item)
-    <div class="card mt-2 w-96 bg-base-100 shadow-xl mx-auto">
+    <div class="card mt-0 md:mt-2 w-96 bg-base-100 shadow-xl mx-auto">
         <div class="card-body">
             <span class="badge badge-outline">{{$item->statuss}}</span>
             <h2 class="card-title">{{$item->user}}</h2>
@@ -17,7 +18,6 @@
         </div>
     </div>
     @endforeach
-    <div class="md:hidden">{{ $data->links('pagination::tailwind') }}</div>
     
 </div>
 @endsection
