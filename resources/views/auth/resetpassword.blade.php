@@ -14,10 +14,10 @@
         <div class="card-body">
             <form action="{{ route('password.update') }}" method="POST">
                  @csrf
-                 <input type="hidden" name="token" value="{{$request->route('token')}}">
+                 <input type="hidden" placeholder="user@example.com" name="token" value="{{$request->route('token')}}">
                 <div class="mb-3">
-                    <label for="" class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email" value="{{old('email', $request->email )}}">
+                    <label for="" class="label">Email</label>
+                    <input type="email" class="input input-bordered w-full max-w-xs" name="email" value="{{old('email', $request->email )}}">
                         @error('email')
                         <span class="text-danger">
                             {{$message}}
@@ -25,8 +25,8 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="password" value="{{old('password')}}">
+                    <label for="" class="label">Password</label>
+                    <input type="password" placeholder="password" class="input input-bordered w-full max-w-xs" name="password" value="{{old('password')}}">
                         @error('password')
                         <span class="text-danger">
                             {{$message}}
@@ -34,11 +34,11 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" name="password_confirmation">
+                    <label for="" class="label">Confirm Password</label>
+                    <input type="password" placeholder="password" class="input input-bordered w-full max-w-xs" name="password_confirmation">
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Kirim</button>
             </form>
         </div>
     </div>

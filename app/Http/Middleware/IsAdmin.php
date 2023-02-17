@@ -23,6 +23,5 @@ class IsAdmin
         }else
         // return redirect('/admin');
         return $next($request);
-
     }
 }

@@ -11,15 +11,15 @@
             <form action="{{ route('password.email') }}" method="POST">
                  @csrf
                 <div class="mb-3">
-                    <label for="" class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email" value="{{old('email')}}">
+                    <label for="" class="label">Email</label>
+                    <input type="email" placeholder="user@example.com" class="input input-bordered w-full max-w-xs" name="email" value="{{old('email')}}">
                         @error('email')
-                        <span class="text-danger">
+                        <span class="text-error">
                             {{$message}}
                         </span>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Kirim</button>
             </form>
         </div>
     </div>

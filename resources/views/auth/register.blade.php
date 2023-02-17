@@ -16,7 +16,7 @@
                  @csrf
                 <div class="mb-3">
                     <label for="" class="label">Name</label>
-                    <input type="text" class="input input-bordered w-full max-w-xs" name="name" value="{{old('name')}}">
+                    <input type="text" class="input input-bordered w-full max-w-xs" placeholder="username" name="name" value="{{old('name')}}">
                         @error('name')
                         <span class="text-danger">
                             {{$message}}
@@ -25,7 +25,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="" class="label">Email</label>
-                    <input type="email" class="input input-bordered w-full max-w-xs" name="email" value="{{old('email')}}">
+                    <input type="email" class="input input-bordered w-full max-w-xs" placeholder="user@example.com" name="email" value="{{old('email')}}">
                         @error('email')
                         <span class="text-danger">
                             {{$message}}
@@ -34,7 +34,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="" class="label">Password</label>
-                    <input type="password" class="input input-bordered w-full max-w-xs" name="password" value="{{old('password')}}">
+                    <input type="password" class="input input-bordered w-full max-w-xs" placeholder="password" name="password" value="{{old('password')}}">
                         @error('password')
                         <span class="text-danger">
                             {{$message}}
@@ -43,7 +43,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="" class="label">Confirm Password</label>
-                    <input type="password" class="input input-bordered w-full max-w-xs" name="password_confirmation">
+                    <input type="password" class="input input-bordered w-full max-w-xs" placeholder="Confirm password" name="password_confirmation">
                 </div>
                 
                 <button type="submit" class="btn btn-primary">register</button>
