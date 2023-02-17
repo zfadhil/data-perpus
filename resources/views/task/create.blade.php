@@ -10,7 +10,7 @@
         </ul>
     </div>
     @endif
-    <div class="card w-max bg-base-100 shadow-xl">
+    <div class="card w-auto bg-base-100 shadow-xl">
         <div class="card-body">
             <h2 class="card-title">Tambah data buku!</h2>
             <form action="{{ url('/admin') }}" method="POST">

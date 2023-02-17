@@ -31,7 +31,8 @@ class TaskRequest extends FormRequest
 
         return [
             'task' => ['required', $rute_task_unique],
-            'user' => ['required']
+            'user' => ['required'],
+            'statuss' => ['required']
         ];
     }
 
@@ -39,7 +40,8 @@ class TaskRequest extends FormRequest
     {
         return[
             'required' => 'deskripsi harus diisi', 
-            'user.required' => 'judul harus diisi'
+            'user.required' => 'judul harus diisi',
+            'statuss.required' => 'status harus diisi'
         ];
     }
 }

@@ -22,6 +22,7 @@
 
     @include('components.navbar')
     @yield('main')
+    {{-- @extends('components.paginate') --}}
   
     
 
