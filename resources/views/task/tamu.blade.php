@@ -17,7 +17,7 @@
         </div>
     </div>
     @endforeach
-    <div class="sm:hidden"><br>{{ $data->links('pagination::tailwind') }}</div>
+    <div class="md:hidden">{{ $data->links('pagination::tailwind') }}</div>
     
 </div>
 @endsection

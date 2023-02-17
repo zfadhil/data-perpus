@@ -30,6 +30,6 @@
 
     </div>
     @endforeach
-    <div class="md:hidden"><br>{{ $data->links('pagination::tailwind') }}</div>
+    <div class="md:hidden">{{ $data->links('pagination::tailwind') }}</div>
 </div>
 @endsection
