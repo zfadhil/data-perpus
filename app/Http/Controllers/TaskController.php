@@ -16,14 +16,12 @@ class TaskController extends Controller
 
     
     public function index(Request $request) {
-        if ($request->search) {
-            $task = Task::where('task', 'LIKE', 
-            "%$request->search%")->get();
-        }
+        if ($request->has('search')) {
+            $task = Task::where('user', 'LIKE','%'.$request->search.'%')->get();
+        } else {
         $task = Task::paginate(6);
-        return view('task.index' ,[
-        'data' => $task
-    ]);
+    }
+        return view('task.index' ,['data' => $task]);
     }
 
     public function show($id) {
