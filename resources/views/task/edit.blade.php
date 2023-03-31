@@ -24,7 +24,7 @@
                     </span>
                     @enderror
                     <input type="text" class="input input-bordered w-full max-w-md mt-2" placeholder="Status buku" name="statuss"
-                        value="{{ old('task', $task->statuss) }}">
+                        value="{{$task->statuss}}">
                     @error('statuss')
                     <span class="text-error">
                         {{$message}}
