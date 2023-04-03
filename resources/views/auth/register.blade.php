@@ -54,9 +54,8 @@
                     <label for="" class="label">Confirm Password</label>
                     <input type="password" class="input input-bordered w-full max-w-xs" placeholder="Confirm password" name="password_confirmation">
                 </div>
-                
-                <button type="submit" class="btn btn-primary">register</button>
                 <p>sudah punya akun? silahkan <a href="{{route('login')}}" class="hidden md:flex">Login</a></p>
+                <button type="submit" class="btn btn-primary">register</button>
             </form>
         </div>
     </div>
