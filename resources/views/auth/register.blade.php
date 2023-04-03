@@ -55,7 +55,7 @@
                     <input type="password" class="input input-bordered w-full max-w-xs" placeholder="Confirm password" name="password_confirmation">
                 </div>
                 <button type="submit" class="btn btn-primary">register</button>
-                <p>sudah punya akun? silahkan <a href="{{route('login')}}" class="hover:underline-offset-4">Login</a></p>
+                <p>sudah punya akun? silahkan <a href="{{route('login')}}" class="underline-offset-4">Login</a></p>
             </form>
         </div>
     </div>
