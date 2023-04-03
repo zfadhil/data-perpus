@@ -56,6 +56,7 @@
                 </div>
                 
                 <button type="submit" class="btn btn-primary">register</button>
+                <p>sudah punya akun? silahkan <a href="{{route('login')}}" class="hidden md:flex">Login</a></p>
             </form>
         </div>
     </div>
