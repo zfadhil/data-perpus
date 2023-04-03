@@ -24,6 +24,15 @@
                     @enderror
                 </div>
                 <div class="mb-3">
+                    <label for="" class="label">Role</label>
+                    <input type="text" class="input input-bordered w-full max-w-xs" placeholder="role" name="role" value="{{old('role')}}">
+                        @error('role')
+                        <span class="text-danger">
+                            {{$message}}
+                        </span>
+                    @enderror
+                </div>
+                <div class="mb-3">
                     <label for="" class="label">Email</label>
                     <input type="email" class="input input-bordered w-full max-w-xs" placeholder="user@example.com" name="email" value="{{old('email')}}">
                         @error('email')
