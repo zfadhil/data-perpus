@@ -54,8 +54,8 @@
                     <label for="" class="label">Confirm Password</label>
                     <input type="password" class="input input-bordered w-full max-w-xs" placeholder="Confirm password" name="password_confirmation">
                 </div>
-                <p>sudah punya akun? silahkan <a href="{{route('login')}}" class="hover:underline-offset-4">Login</a></p>
                 <button type="submit" class="btn btn-primary">register</button>
+                <p>sudah punya akun? silahkan <a href="{{route('login')}}" class="hover:underline-offset-4">Login</a></p>
             </form>
         </div>
     </div>
