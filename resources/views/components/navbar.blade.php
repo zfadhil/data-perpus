@@ -26,7 +26,7 @@
         </div>
         <div class="flex-none gap-2">
             @guest
-            <a href="{{route('login')}}" class="btn btn-outline me-2">Login</a>
+            {{-- <a href="{{route('login')}}" class="btn btn-outline me-2">Login</a> --}}
             <a href="{{route('register')}}" class="btn btn-primary">Sign-up</a>
             @else
             {{-- <form action="/" method="get">
